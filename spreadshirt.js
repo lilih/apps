@@ -362,8 +362,8 @@
     function Tablomat(options, callback) {
         var url,
             platform = options.platform === "NA" ? "NA" : "EU",
-            country = platform === "EU" ? "DE" : "US",
-            language = window.navigator.language || "en";
+            country = options.country || (platform === "EU" ? "DE" : "US"),
+            language = options.language || (window.navigator.language || "en");
 
         language = language.split("-")[0];
 
